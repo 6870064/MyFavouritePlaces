@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U67-4Z-i0p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U67-4Z-i0p">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,8 +27,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="4e8-Hf-JBT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsT-mD-ufl">
+                                                    <rect key="frame" x="344" y="189" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="GbT-yY-8Li"/>
+                                                        <constraint firstAttribute="height" constant="50" id="TP3-FY-xfd"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="W8E-XI-eQ8"/>
+                                                        <constraint firstAttribute="width" constant="50" id="g4N-A8-eAb"/>
+                                                    </constraints>
+                                                    <state key="normal" image="map"/>
+                                                    <connections>
+                                                        <segue destination="3MW-sE-Pbc" kind="presentation" identifier="showMap" id="dgH-RK-N9y"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -197,6 +210,46 @@
             </objects>
             <point key="canvasLocation" x="980" y="-34"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="nbt-rZ-DEb">
+            <objects>
+                <viewController id="3MW-sE-Pbc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n9X-ob-gII">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-bA-enU">
+                                <rect key="frame" x="344" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="2aM-jx-Blw"/>
+                                    <constraint firstAttribute="height" constant="30" id="TUC-Dt-Cnf"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="camcel"/>
+                                <connections>
+                                    <action selector="closeCV" destination="jPi-oL-itZ" eventType="touchUpInside" id="Bk1-L3-vsW"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lXt-O5-Fq2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="c1b-bA-enU" secondAttribute="trailing" constant="40" id="T1C-eP-AcD"/>
+                            <constraint firstItem="lXt-O5-Fq2" firstAttribute="trailing" secondItem="qry-0Z-hXD" secondAttribute="trailing" id="YW6-fA-LkX"/>
+                            <constraint firstItem="lXt-O5-Fq2" firstAttribute="top" secondItem="n9X-ob-gII" secondAttribute="top" id="erZ-Bm-EZA"/>
+                            <constraint firstAttribute="bottom" secondItem="lXt-O5-Fq2" secondAttribute="bottom" id="s1C-eC-IsB"/>
+                            <constraint firstItem="c1b-bA-enU" firstAttribute="top" secondItem="qry-0Z-hXD" secondAttribute="top" constant="40" id="wSy-HE-76f"/>
+                            <constraint firstItem="lXt-O5-Fq2" firstAttribute="leading" secondItem="qry-0Z-hXD" secondAttribute="leading" id="xtl-Pg-Yqd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qry-0Z-hXD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0Z-Yp-B5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jPi-oL-itZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1789.8550724637682" y="-34.151785714285715"/>
+        </scene>
         <!--My Places-->
         <scene sceneID="S9j-DU-nW1">
             <objects>
@@ -316,7 +369,11 @@
                                 <action selector="reversedSorting:" destination="K6c-Ti-zRt" id="80w-Vd-gSq"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eKX-PE-ItT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eKX-PE-ItT">
+                            <connections>
+                                <segue destination="TgT-uY-GdH" kind="presentation" id="rQd-Gl-3QT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="SegmentedControl" destination="SMu-8n-Xe8" id="CyN-CM-vnQ"/>
@@ -352,7 +409,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TgT-uY-GdH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ilg-70-KnL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -368,6 +425,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="camcel" width="128" height="128"/>
+        <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C3N-zt-v7F"/>
