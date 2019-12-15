@@ -15,8 +15,8 @@ class MapViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func closeCV() {
+
+    @IBAction func closeMap() {
+        dismiss(animated: true)
     }
-    
 }
