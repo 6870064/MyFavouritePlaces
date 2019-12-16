@@ -13,7 +13,9 @@ class NewPlaceViewController: UITableViewController {
     var imageIsChanged = false
     
     var currentPlace: Place!
+    
     @IBOutlet var saveButton: UIBarButtonItem!
+    
     
     @IBOutlet var placeName: UITextField!
     @IBOutlet var placeLocation: UITextField!
@@ -76,6 +78,16 @@ class NewPlaceViewController: UITableViewController {
         }
     }
 
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+    
+    let mapVC = segue.destination as! MapViewController
+    mapVC.place = currentPlace
+}
     
     func savePlace () {
         
