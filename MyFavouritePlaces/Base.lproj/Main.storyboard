@@ -29,9 +29,12 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="4e8-Hf-JBT">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsT-mD-ufl">
-                                                    <rect key="frame" x="344" y="189" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsT-mD-ufl">
+                                                    <rect key="frame" x="344" y="185" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="6JA-4c-tzg"/>
+                                                        <constraint firstAttribute="width" constant="50" id="USJ-q2-UFJ"/>
+                                                    </constraints>
                                                     <state key="normal" image="map"/>
                                                     <connections>
                                                         <segue destination="3MW-sE-Pbc" kind="presentation" identifier="showMap" id="dgH-RK-N9y"/>
@@ -42,8 +45,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="4e8-Hf-JBT" secondAttribute="bottom" id="EdO-rW-RGT"/>
                                                 <constraint firstItem="4e8-Hf-JBT" firstAttribute="top" secondItem="lao-WO-A0G" secondAttribute="top" id="G3U-Bd-RUc"/>
+                                                <constraint firstAttribute="trailing" secondItem="PsT-mD-ufl" secondAttribute="trailing" constant="20" id="HRD-45-5fJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="PsT-mD-ufl" secondAttribute="bottom" constant="15" id="LUQ-Dg-PKX"/>
                                                 <constraint firstItem="4e8-Hf-JBT" firstAttribute="leading" secondItem="lao-WO-A0G" secondAttribute="leading" id="Tqc-Bq-byi"/>
                                                 <constraint firstAttribute="trailing" secondItem="4e8-Hf-JBT" secondAttribute="trailing" id="bnc-8i-K2H"/>
+                                                <constraint firstAttribute="bottom" secondItem="PsT-mD-ufl" secondAttribute="bottom" constant="15" id="zEp-5l-4Cy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
