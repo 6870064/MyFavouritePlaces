@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="ua8-PO-cLP" customClass="NewPlaceViewController" customModule="MyFavouritePlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Owg-sJ-JnX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -381,6 +381,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SegmentedControl" destination="SMu-8n-Xe8" id="CyN-CM-vnQ"/>
+                        <outlet property="reverseSortingButton" destination="y0C-Vq-fwz" id="LMX-7g-tOU"/>
                         <outlet property="tableView" destination="zJF-Qe-6ZL" id="zPA-gx-NbY"/>
                     </connections>
                 </viewController>
@@ -433,6 +434,6 @@
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yaf-P6-V5n"/>
+        <segue reference="C3N-zt-v7F"/>
     </inferredMetricsTieBreakers>
 </document>
