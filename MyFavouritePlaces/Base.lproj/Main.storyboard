@@ -233,13 +233,27 @@
                                     <action selector="closeMap" destination="3MW-sE-Pbc" eventType="touchUpInside" id="Cvd-bz-r2w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG3-IO-hd5">
+                                <rect key="frame" x="324" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dKY-tQ-WtG"/>
+                                    <constraint firstAttribute="height" constant="50" id="n0x-yD-QoM"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="NJT-q7-xwC"/>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="3MW-sE-Pbc" eventType="touchUpInside" id="zRK-eZ-a1Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="Xy3-89-0Ed" secondAttribute="trailing" constant="30" id="BjR-Zv-JZR"/>
                             <constraint firstItem="Xy3-89-0Ed" firstAttribute="top" secondItem="qry-0Z-hXD" secondAttribute="top" constant="30" id="CI4-B0-lLK"/>
+                            <constraint firstItem="qry-0Z-hXD" firstAttribute="bottom" secondItem="dG3-IO-hd5" secondAttribute="bottom" constant="40" id="HtO-Op-E5R"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="trailing" secondItem="qry-0Z-hXD" secondAttribute="trailing" id="YW6-fA-LkX"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="top" secondItem="n9X-ob-gII" secondAttribute="top" id="erZ-Bm-EZA"/>
+                            <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="dG3-IO-hd5" secondAttribute="trailing" constant="40" id="qtM-0Y-RLb"/>
                             <constraint firstAttribute="bottom" secondItem="lXt-O5-Fq2" secondAttribute="bottom" id="s1C-eC-IsB"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="leading" secondItem="qry-0Z-hXD" secondAttribute="leading" id="xtl-Pg-Yqd"/>
                         </constraints>
@@ -429,6 +443,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="camcel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
