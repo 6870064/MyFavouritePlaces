@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="4e8-Hf-JBT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="-13" width="414" height="272"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsT-mD-ufl">
                                                     <rect key="frame" x="344" y="185" width="50" height="50"/>
@@ -37,7 +37,7 @@
                                                     </constraints>
                                                     <state key="normal" image="map"/>
                                                     <connections>
-                                                        <segue destination="3MW-sE-Pbc" kind="presentation" identifier="showMap" id="dgH-RK-N9y"/>
+                                                        <segue destination="3MW-sE-Pbc" kind="presentation" identifier="showPlace" id="dgH-RK-N9y"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -118,9 +118,12 @@
                                                     </constraints>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voh-Mb-Vf7">
-                                                    <rect key="frame" x="375" y="26" width="22" height="22"/>
+                                                    <rect key="frame" x="315" y="26" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="Placeholder"/>
+                                                    <state key="normal" title="Button" image="map-marker-96"/>
+                                                    <connections>
+                                                        <segue destination="3MW-sE-Pbc" kind="presentation" identifier="getAddress" id="fSS-Xa-idP"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -451,11 +454,12 @@
         <image name="AZ" width="25" height="24"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
-        <image name="Placeholder" width="22" height="22"/>
         <image name="camcel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
+        <image name="map-marker-96" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dgH-RK-N9y"/>
         <segue reference="Yaf-P6-V5n"/>
     </inferredMetricsTieBreakers>
 </document>
