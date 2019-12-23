@@ -243,10 +243,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG3-IO-hd5">
-                                <rect key="frame" x="324" y="718" width="50" height="50"/>
+                                <rect key="frame" x="344" y="738" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="dKY-tQ-WtG"/>
-                                    <constraint firstAttribute="height" constant="50" id="n0x-yD-QoM"/>
+                                    <constraint firstAttribute="width" constant="30" id="dKY-tQ-WtG"/>
+                                    <constraint firstAttribute="height" constant="30" id="n0x-yD-QoM"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="NJT-q7-xwC"/>
                                 <state key="normal" image="Location"/>
@@ -254,22 +254,55 @@
                                     <action selector="centerViewInUserLocation" destination="3MW-sE-Pbc" eventType="touchUpInside" id="zRK-eZ-a1Z"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-wz-Jmh">
+                                <rect key="frame" x="187" y="381" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xmg-he-ko8"/>
+                                    <constraint firstAttribute="width" constant="40" id="rpU-Md-HNA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nxH-11-8Xy">
+                                <rect key="frame" x="16" y="130" width="382" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P74-xZ-EYS">
+                                <rect key="frame" x="172.5" y="720" width="69" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed" destination="3MW-sE-Pbc" eventType="touchUpInside" id="oVF-Ds-fjy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="Xy3-89-0Ed" secondAttribute="trailing" constant="30" id="BjR-Zv-JZR"/>
                             <constraint firstItem="Xy3-89-0Ed" firstAttribute="top" secondItem="qry-0Z-hXD" secondAttribute="top" constant="30" id="CI4-B0-lLK"/>
+                            <constraint firstItem="1OI-wz-Jmh" firstAttribute="centerY" secondItem="n9X-ob-gII" secondAttribute="centerY" constant="-20" id="DEe-zv-KI1"/>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="bottom" secondItem="dG3-IO-hd5" secondAttribute="bottom" constant="40" id="HtO-Op-E5R"/>
+                            <constraint firstItem="1OI-wz-Jmh" firstAttribute="centerX" secondItem="n9X-ob-gII" secondAttribute="centerX" id="Ll5-G0-LTQ"/>
+                            <constraint firstItem="P74-xZ-EYS" firstAttribute="centerX" secondItem="n9X-ob-gII" secondAttribute="centerX" id="PG7-u0-f1k"/>
+                            <constraint firstItem="nxH-11-8Xy" firstAttribute="leading" secondItem="qry-0Z-hXD" secondAttribute="leading" constant="16" id="XLH-t6-wE4"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="trailing" secondItem="qry-0Z-hXD" secondAttribute="trailing" id="YW6-fA-LkX"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="top" secondItem="n9X-ob-gII" secondAttribute="top" id="erZ-Bm-EZA"/>
+                            <constraint firstItem="qry-0Z-hXD" firstAttribute="bottom" secondItem="P74-xZ-EYS" secondAttribute="bottom" constant="40" id="hAT-WO-8Yh"/>
+                            <constraint firstItem="lXt-O5-Fq2" firstAttribute="top" secondItem="nxH-11-8Xy" secondAttribute="bottom" constant="-166" id="pOY-8v-9hN"/>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="dG3-IO-hd5" secondAttribute="trailing" constant="40" id="qtM-0Y-RLb"/>
                             <constraint firstAttribute="bottom" secondItem="lXt-O5-Fq2" secondAttribute="bottom" id="s1C-eC-IsB"/>
+                            <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="nxH-11-8Xy" secondAttribute="trailing" constant="16" id="vWP-hO-be7"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="leading" secondItem="qry-0Z-hXD" secondAttribute="leading" id="xtl-Pg-Yqd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qry-0Z-hXD"/>
                     </view>
                     <navigationItem key="navigationItem" id="X38-DJ-s7h"/>
                     <connections>
+                        <outlet property="addressLabel" destination="nxH-11-8Xy" id="pZT-FS-pUM"/>
+                        <outlet property="doneButton" destination="P74-xZ-EYS" id="CrG-dM-ydW"/>
+                        <outlet property="mapPinImage" destination="1OI-wz-Jmh" id="xdD-bU-110"/>
                         <outlet property="mapView" destination="lXt-O5-Fq2" id="xCw-bz-DqA"/>
                     </connections>
                 </viewController>
@@ -454,12 +487,13 @@
         <image name="AZ" width="25" height="24"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="Pin" width="42" height="42"/>
         <image name="camcel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
         <image name="map-marker-96" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dgH-RK-N9y"/>
+        <segue reference="fSS-Xa-idP"/>
         <segue reference="Yaf-P6-V5n"/>
     </inferredMetricsTieBreakers>
 </document>

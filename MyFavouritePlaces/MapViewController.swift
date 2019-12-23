@@ -16,13 +16,18 @@ class MapViewController: UIViewController {
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeters = 10_000.00
-
-    @IBOutlet weak var mapView: MKMapView!
+    var incomeSegueIdentifier = ""
+    
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        setupPlaceMark()
+        setupMapView()
         checkLocationServices()
     }
 
@@ -31,15 +36,21 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func centerViewInUserLocation() {
-        if let location =  locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location,
-                                            latitudinalMeters: regionInMeters,
-                                            longitudinalMeters: regionInMeters)
-            mapView.setRegion(region, animated: true)
-        }
+       
+        showUserLocation()
     }
     
+    @IBAction func doneButtonPressed() {
+    }
     
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showPlace" {
+        setupPlaceMark()
+            mapPinImage.isHidden = true
+            addressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
+    }
     
     private func setupPlaceMark() {
         guard let location = place.location else { return }
@@ -91,8 +102,14 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            
+            if incomeSegueIdentifier == "getAdress" { showUserLocation() }
             break
         case .denied:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(title: "Your location is not Available",
+                          message: "To give oermission Go to: Settings -> MyFavouritePlaces -> Location")
+            }
             
             break
         case .notDetermined:
@@ -103,6 +120,18 @@ class MapViewController: UIViewController {
         break
         }
     }
+    
+    private func showUserLocation() {
+        if let location =  locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    
+    
     
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
