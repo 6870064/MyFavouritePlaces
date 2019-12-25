@@ -10,7 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewControllerDelegate {
+    func getAddress(_ address: String?)
+}
+
 class MapViewController: UIViewController {
+    
+    var mapViewControllerDelegate: MapViewControllerDelegate?
     
     var place = Place()
     let annotationIdentifier = "annotationIdentifier"
@@ -27,7 +33,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        addressLabel.text = ""
+      //   addressLabel.text = ""
         mapView.delegate = self
         setupMapView()
         checkLocationServices()
@@ -43,6 +49,8 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        mapViewControllerDelegate?.getAddress(addressLabel.text)
+        dismiss(animated: true)
     }
     
     private func setupMapView() {
@@ -110,7 +118,7 @@ class MapViewController: UIViewController {
         case .denied:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.showAlert(title: "Your location is not Available",
-                          message: "To give oermission Go to: Settings -> MyFavouritePlaces -> Location")
+                          message: "For giving permissions go to: Settings -> MyFavouritePlaces -> Location")
             }
             
             break
