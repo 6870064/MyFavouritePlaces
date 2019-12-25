@@ -268,13 +268,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P74-xZ-EYS">
-                                <rect key="frame" x="172.5" y="720" width="69" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="170" y="720" width="74" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="doneButtonPressed" destination="3MW-sE-Pbc" eventType="touchUpInside" id="oVF-Ds-fjy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-bK-dPl">
+                                <rect key="frame" x="182" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NiR-pp-xqw"/>
+                                    <constraint firstAttribute="width" constant="50" id="ayy-qs-MCB"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="3MW-sE-Pbc" eventType="touchUpInside" id="k9y-3f-GR1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -288,11 +299,13 @@
                             <constraint firstItem="P74-xZ-EYS" firstAttribute="centerX" secondItem="n9X-ob-gII" secondAttribute="centerX" id="PG7-u0-f1k"/>
                             <constraint firstItem="nxH-11-8Xy" firstAttribute="leading" secondItem="qry-0Z-hXD" secondAttribute="leading" constant="16" id="XLH-t6-wE4"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="trailing" secondItem="qry-0Z-hXD" secondAttribute="trailing" id="YW6-fA-LkX"/>
+                            <constraint firstItem="9x7-bK-dPl" firstAttribute="centerX" secondItem="n9X-ob-gII" secondAttribute="centerX" id="aDO-Hk-MEB"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="top" secondItem="n9X-ob-gII" secondAttribute="top" id="erZ-Bm-EZA"/>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="bottom" secondItem="P74-xZ-EYS" secondAttribute="bottom" constant="40" id="hAT-WO-8Yh"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="top" secondItem="nxH-11-8Xy" secondAttribute="bottom" constant="-166" id="pOY-8v-9hN"/>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="dG3-IO-hd5" secondAttribute="trailing" constant="40" id="qtM-0Y-RLb"/>
                             <constraint firstAttribute="bottom" secondItem="lXt-O5-Fq2" secondAttribute="bottom" id="s1C-eC-IsB"/>
+                            <constraint firstItem="qry-0Z-hXD" firstAttribute="bottom" secondItem="9x7-bK-dPl" secondAttribute="bottom" constant="40" id="uKa-P5-RYz"/>
                             <constraint firstItem="qry-0Z-hXD" firstAttribute="trailing" secondItem="nxH-11-8Xy" secondAttribute="trailing" constant="16" id="vWP-hO-be7"/>
                             <constraint firstItem="lXt-O5-Fq2" firstAttribute="leading" secondItem="qry-0Z-hXD" secondAttribute="leading" id="xtl-Pg-Yqd"/>
                         </constraints>
@@ -302,6 +315,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="nxH-11-8Xy" id="pZT-FS-pUM"/>
                         <outlet property="doneButton" destination="P74-xZ-EYS" id="CrG-dM-ydW"/>
+                        <outlet property="goButton" destination="9x7-bK-dPl" id="1mF-09-ytT"/>
                         <outlet property="mapPinImage" destination="1OI-wz-Jmh" id="xdD-bU-110"/>
                         <outlet property="mapView" destination="lXt-O5-Fq2" id="xCw-bz-DqA"/>
                     </connections>
@@ -485,6 +499,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>
