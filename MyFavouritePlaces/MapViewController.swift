@@ -33,7 +33,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-      //   addressLabel.text = ""
+        addressLabel.text = ""
         mapView.delegate = self
         setupMapView()
         checkLocationServices()
@@ -143,6 +143,7 @@ class MapViewController: UIViewController {
     private func getCenterLocation(for mapView: MKMapView) -> CLLocation {
         let latitude = mapView.centerCoordinate.latitude
     let longitude = mapView.centerCoordinate.longitude
+        
         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
@@ -197,13 +198,13 @@ extension MapViewController: MKMapViewDelegate {
         let buildNumber = placemark?.subThoroughfare
             
         DispatchQueue.main.async {
-            
-            if streetName != nil && buildNumber != nil {
-                                self.addressLabel.text = "\(streetName!), \(buildNumber!)"
-                            } else if streetName != nil {
-                                self.addressLabel.text = "\(streetName!)"
-                            } else {
-                                self.addressLabel.text = ""
+        
+        if streetName != nil && buildNumber != nil {
+            self.addressLabel.text = "\(streetName!), \(buildNumber!)"
+        } else if streetName != nil {
+            self.addressLabel.text = "\(streetName!)"
+        } else {
+            self.addressLabel.text = ""
                             }
                         }
                     }
